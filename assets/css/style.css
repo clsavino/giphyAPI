@@ -1,0 +1,35 @@
+body{
+	margin: 0;
+	display: block;
+}
+ button, div {
+ 	margin: 10px;
+ }
+
+img {
+	width: 200px;
+	height: 160px;
+	margin: 20px;
+}
+
+p {
+	margin: 20px 20px 20px 30px;
+}
+
+.player-wrapper {
+	float: left;
+	max-width: 1000px;
+}
+ 
+.input-form {
+	float: right;
+	margin-top: 100px;
+	margin-right: 100px;
+}
+.form {
+	text-align: center;
+}
+
+#gifs {
+	float: left;
+}
