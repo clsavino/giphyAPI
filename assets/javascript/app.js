@@ -4,14 +4,13 @@ $(document).ready(function() {
 	var newPlayer = '';
 
 	function makeButton(newPlayer){
-		// player's name is the parameter
-		// the name was retrieved from the user's input or from the stored array
+		// player's name was retrieved from the user's input or from the stored array and passed to this function
 		console.log('newPlayer',newPlayer);
 		//must be an element with <> included
 		var btn = $('<button>');
-		btn.addClass('player'); // the class for buttons
-		//player's name passed into function
-		//added as a data-name attr and as text in the button
+		// add the class for buttons
+		btn.addClass('player'); 
+		//player's name is added as a data-name attr and as text in the button
 		btn.attr('data-name', newPlayer);
 		btn.text(newPlayer);
 		//append new btn to playerBtns div
@@ -19,10 +18,12 @@ $(document).ready(function() {
 	}
 
 	function renderButtons() {
-		
+
+		// Deletes the buttons prior to adding new buttons so there is no repeat buttons 
+		$('#playerBtns').empty();
 		//loop through the array of players
 		for (var i = 0; i < players.length; i++) {
-			//dynamically generate buttons for each player in the array
+		//dynamically generate buttons for each player in the array
 			newPlayer = players[i];
 			makeButton(newPlayer);
 		};
@@ -33,14 +34,16 @@ $(document).ready(function() {
 
 		var $nbaPlayer = $(this).data('name');
 		console.log('nbaPlayer', $nbaPlayer);
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + $nbaPlayer + "&api_key=dc6zaTOxFJmzC&limit=9";
+		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + $nbaPlayer + "&api_key=dc6zaTOxFJmzC&limit=10";
 		console.log('queryURL ', queryURL);
 		//build a div with attrs
 		//for each player user selects 
 		var $playerDiv = $('<div>');
-		var $p = $('<p>');
-		$p.addClass('player-name');
-		$p.text($nbaPlayer);
+		$playerDiv.addClass('player-div');
+
+		var $pName = $('<p>');
+		$pName.addClass('player-name');
+		$pName.text($nbaPlayer);
 
 		$.ajax({
                 url: queryURL,
@@ -50,13 +53,21 @@ $(document).ready(function() {
 
             for (var i = 0; i <= 9; i++) {
 				var $results = response.data[i];
-					console.log('$results ', $results);
+
 				var rating = $results.rating;
+				var $pRating = $('<p>').text('Rating: '+ rating);
+
+				var $gifDiv = $('<div>');
+				$gifDiv.addClass('gif-rating');
+				$gifDiv.append($pRating);
+
+				console.log('$results ', $results);
+				console.log('rating ', rating);
 
                 if (rating === 'g' || rating === 'pg') {
 					var $stillImg = $results.images.fixed_height_still.url;
 					var $animateImg = $results.images.fixed_height.url;				
-					// make an img element with data fields and urls to match the state - still or static
+				// make an img element with data fields with image urls to match the state - still and animate
 					var $img = $('<img>');
 					$img.addClass('playerImg');// the class for images
 					$img.attr('src', $stillImg);
@@ -64,12 +75,15 @@ $(document).ready(function() {
 					$img.attr('data-still', $stillImg);
 					$img.attr('data-animate', $animateImg);
 					
-					$playerDiv.append($img);
+					//$playerDiv.append($img);
+					$gifDiv.prepend($img);
+					$playerDiv.append($gifDiv);
+					$playerDiv.prepend($pName);
 				};			
 			};	
-				//append static gifs and info into #gifs div
+				//append static gifs & rating into #gifs div
 				$('#gifs').prepend($playerDiv);
-				$('#gifs').prepend($p);
+				
 			}); //end of .done
 		
 	} //end of displayPlayers
@@ -100,10 +114,16 @@ $(document).ready(function() {
 		// When users press "enter" instead of clicking on the button, it won't move to the next page
 		return false;
 	});
-
+	// ***************VERY IMPORTANT***********************
+	// $('.player').on('click', displayPlayers); 
+	// won't work for new buttons (can't capture elements generated dynamically) must use
+	// $(document).on('click', '.player', displayPlayers);
+	//*****************************************************
 	// Generic function for displaying the player's gifs
-	// the player class is on the buttons with player's names
+	// the '.player' class is on the buttons with player's names
 	$(document).on('click', '.player', displayPlayers);
+	// Generic function for animating the player's gifs
+	// the '.playerImg' class is on the images
 	$(document).on('click', '.playerImg', changeState);
 
 

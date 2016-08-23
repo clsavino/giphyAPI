@@ -2,8 +2,18 @@ body{
 	margin: 0;
 	display: block;
 }
- button, div {
+ button {
  	margin: 10px;
+ 	padding: 10px;
+ 	background-color: orange;
+ 	border-radius: 20px;
+ 	border: 2px solid brown;
+ 	color: brown;
+ 	font-weight: bold;
+ }
+
+div {
+ 	margin: 0;
  }
 
 img {
@@ -13,23 +23,72 @@ img {
 }
 
 p {
-	margin: 20px 20px 20px 30px;
+	margin: 10px;
+}
+.header {
+	font-size: 25px;
+	line-height: 35px;
+	background-color: orange;
+	border: 5px solid brown;
+	text-align: center;
+	padding: 20px;
+	color: brown;
 }
 
 .player-wrapper {
 	float: left;
 	max-width: 1000px;
+	margin-top: 50px;
 }
  
-.input-form {
-	float: right;
-	margin-top: 100px;
-	margin-right: 100px;
-}
 .form {
 	text-align: center;
+	margin-top: 50px;
+	margin-right: 10px;
 }
 
-#gifs {
+#gif {
 	float: left;
+	max-width: 1000px;
+}
+
+.playerDiv {
+	max-width: 1000px;
+}
+
+.input-form {
+	float: right;
+}
+
+aside {
+	float: right;
+}
+
+fieldset {
+    display: block;
+    -webkit-margin-start: 2px;
+    -webkit-margin-end: 2px;
+    -webkit-padding-before: 0.35em;
+    -webkit-padding-start: 0.75em;
+    -webkit-padding-end: 0.75em;
+    -webkit-padding-after: 0.625em;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    min-width: -webkit-min-content;
+    border-width: 5px;
+    border-style: groove;
+    border-color: orange;
+    color: #ff9900;
+    font-weight: bold;
+}
+
+#addPlayer {
+	background-color: orange;
+	padding: 10px;
+	margin-top: 20px
+	color: brown;
+	border-radius: 5px;
 }

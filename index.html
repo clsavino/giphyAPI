@@ -11,6 +11,10 @@
 </head>
 
 <body>
+
+	<header class='header'>
+	<h1 class='nba-header'>NBA GIFS</h1>
+
 	<div class="player-wrapper">
 
 	<section class="playerBtns-gifs">
@@ -26,12 +30,14 @@
 
 	<aside class="input-player">
 		<form class="form">
+		<fieldset class='form-style'>
 		<!--add label and NBA icon-->
-		<label for="player-input">Add another NBA Player</label>
-		
+		<legend class='legend'>Your turn to add an NBA player</legend>
+		<label for="player-input">Choose your favorite</label>		
 		<input type="text" id="player-input"><br>
 		<!--"Submit" button triggers player to be added to a new btn-->
 		<input type="submit" id="addPlayer" value="Add a new button">
+		</fieldset>
 		</form>
 	</aside>
 
