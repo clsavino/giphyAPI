@@ -82,6 +82,10 @@ $(document).ready(function() {
 				};			
 			};	
 				//append static gifs & rating into #gifs div
+				
+				var $lastDiv = $('<div>').addClass('clearBoth');
+				$playerDiv.append($lastDiv);
+
 				$('#gifs').prepend($playerDiv);
 				
 			}); //end of .done

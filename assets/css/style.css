@@ -22,9 +22,6 @@ img {
 	margin: 20px;
 }
 
-p {
-	margin: 10px;
-}
 .header {
 	font-size: 25px;
 	line-height: 35px;
@@ -37,31 +34,42 @@ p {
 
 .player-wrapper {
 	float: left;
-	max-width: 1000px;
+	max-width: 950px;
 	margin-top: 50px;
 }
  
-.form {
-	text-align: center;
-	margin-top: 50px;
-	margin-right: 10px;
+#gifs {
+	float: left;
+	max-width: 950px;
 }
 
-#gif {
+.gif-rating {
+	max-width: 240px;
 	float: left;
-	max-width: 1000px;
 }
 
 .playerDiv {
-	max-width: 1000px;
+	max-width: 950px;
+	display: block;
 }
 
+.player-name {
+	margin-top: 30px;
+}
+
+/* this is the div with the form */
 .input-form {
 	float: right;
 }
 
 aside {
 	float: right;
+}
+
+.form {
+	text-align: center;
+	margin-top: 50px;
+	margin-right: 10px;
 }
 
 fieldset {
@@ -85,10 +93,26 @@ fieldset {
     font-weight: bold;
 }
 
+input {
+	vertical-align: middle;
+}
+
+#player-input {
+	border: 2px solid brown;
+	color: orange;
+	padding: 5px;
+	font-weight: bold;
+}
+/* this styles the input button*/
 #addPlayer {
 	background-color: orange;
 	padding: 10px;
-	margin-top: 20px
+	margin-top: 10px;
 	color: brown;
 	border-radius: 5px;
+	border: 2px solid brown;
+}
+
+.clearboth {
+	clear: both;
 }
