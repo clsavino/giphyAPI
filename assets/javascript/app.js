@@ -56,6 +56,7 @@ $(document).ready(function() {
 
 				var rating = $results.rating;
 				var $pRating = $('<p>').text('Rating: '+ rating);
+				$pRating.addClass('pRating');
 
 				var $gifDiv = $('<div>');
 				$gifDiv.addClass('gif-rating');
