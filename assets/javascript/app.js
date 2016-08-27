@@ -53,7 +53,7 @@ $(document).ready(function() {
 
             for (var i = 0; i <= 9; i++) {
 				var $results = response.data[i];
-
+				console.log($results[i]);
 				var rating = $results.rating;
 				var $pRating = $('<p>').text('Rating: '+ rating);
 				$pRating.addClass('pRating');
@@ -96,6 +96,7 @@ $(document).ready(function() {
 	function changeState() {
 		console.log('entered changeState');
 			$('.playerImg').on('click', function() {
+
 				var state = $(this).attr('data-state');
         		console.log(' player Image clicked, state = ', state);
 				if (state === 'still') {
