@@ -3,6 +3,11 @@ body{
 	display: block;
 	background-image: url('../../assets/images/basketball.jpg');
 }
+.container {
+	overflow: auto;
+	text-align: center;/*88888888888*/
+}
+
  button {
  	margin: 10px;
  	padding: 10px;
@@ -12,10 +17,6 @@ body{
  	color: black;
  	font-weight: bold;
  	text-transform: capitalize;
- }
-
-div {
- 	margin: 0;
  }
 
 img {
@@ -41,19 +42,18 @@ img {
 	margin-top: 30px;
 }
  
+#playerbtns {
+	text-align:  center;
+}
+
 #gifs {
-	float: left;
+	float:left;
 	max-width: 980px;
 }
 
 .gif-rating {
 	max-width: 240px;
 	float: left;
-
-}
-
-.gif-rating p {
-
 }
 
 .playerDiv {
@@ -61,7 +61,6 @@ img {
 	display: block;
 }
 
-/* this is the div with the form */
 .input-form {
 	float: left;
 }
@@ -144,17 +143,18 @@ input {
 
 	.container {
     	max-width: 980px;
+    	overflow: auto;
     	text-align: center;
   }
 
     .input-form, .player-wrapper {
  		display: inline-block;
  		margin: 30px auto;
+ 		float: none;
   }
 
     .form {
     	margin: 30px auto;
-    	text-align: center;
     	max-width: 100%;
  }
 
@@ -164,6 +164,7 @@ input {
 
 	.playerName {
 		margin: 20px;
+		max-width: 670px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -171,11 +172,13 @@ input {
     .container {  
     	max-width: 768px;
     	text-align: center;
+    	overflow: auto;
     }
 
    .input-form, .player-wrapper {
     	display: inline-block;
     	margin: 30px auto;
+    	float: none;
     }
 
  	#playerBtns {
@@ -194,11 +197,13 @@ input {
 	.container {
 		max-width: 640px;
     	text-align: center;
+    	overflow: auto;
 	}
 
   	.input-form, .player-wrapper {
     	display: inline-block;
  		margin: 30px auto;
+ 		float: none;
   	}
 
   	.form {
@@ -210,6 +215,7 @@ input {
 	#playerBtns {
 		margin:10px auto;
 	}
+
 	form {
 		margin: 30px auto;
 	}
