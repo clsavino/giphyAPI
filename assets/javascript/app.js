@@ -5,7 +5,6 @@ $(document).ready(function() {
 
 	function makeButton(newPlayer){
 		// player's name was retrieved from the user's input or from the stored array and passed to this function
-		console.log('newPlayer',newPlayer);
 		//must be an element with <> included
 		var btn = $('<button>');
 		// add the class for buttons
@@ -33,7 +32,6 @@ $(document).ready(function() {
 	function displayPlayers() {
 
 		var $nbaPlayer = $(this).data('name');
-		console.log('nbaPlayer', $nbaPlayer);
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + $nbaPlayer + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 		//build a div with attrs
@@ -53,7 +51,6 @@ $(document).ready(function() {
 
             for (var i = 0; i <= 9; i++) {
 				var $results = response.data[i];
-				console.log($results[i]);
 				var rating = $results.rating;
 				var $pRating = $('<p>').text('Rating: '+ rating);
 				$pRating.addClass('pRating');
