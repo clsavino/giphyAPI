@@ -30,7 +30,8 @@ $(document).ready(function() {
 	} //end of renderButtons
 	
 	function displayPlayers() {
-
+		// clear the gifs div before inserting new player gifs
+		$('#gifs').empty();
 		var $nbaPlayer = $(this).data('name');
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + $nbaPlayer + "&api_key=dc6zaTOxFJmzC&limit=10";
 
